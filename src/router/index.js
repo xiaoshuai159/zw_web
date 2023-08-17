@@ -66,7 +66,7 @@ const routes = [
       {
         path: '/getWarningfourg',
         // name:'search_bak',
-        name: 'getWarning',
+        name: 'getWarningfourg',
         meta: {
           title: '预警4G-数据详情'
         },

@@ -13,8 +13,9 @@
 
     <div class="dp_top">
       <!-- 预留 -->
-      <div class="logo">银川市境外网址处置平台—{{ namenav }}</div>
-      <div class="nav">
+      <div class="logo">中卫市境外涉诈网址发现预警平台—{{ namenav }}</div>
+      <div class="nav" v-show="$route.path==='/findUser'||$route.path==='/findRole'||$route.path==='/dept'">
+        
         <el-button
           size="mini"
           type="primary"
@@ -25,6 +26,7 @@
           @click="navclick(item.name, item.menuName)"
           >{{ item.menuName }}</el-button
         >
+        <el-button size="mini" type="primary" class="navnum">部门管理</el-button>
       </div>
       <!-- <div>
         <div class="fanhui" @click="ret1">
@@ -449,15 +451,15 @@ img {
 }
 .header .logo {
   position: absolute;
-  left: 36.5%;
-  top: 18%;
+  left: 36%;
+  top: 20%;
   font-family: 'heiti';
-  font-size: 32px;
+  font-size: 25px;
   /* letter-spacing: 5px ; */
   background-image: linear-gradient(0deg, #f8f8fb 0%, #8ec4fd 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  width: 27%;
+  width: 28%;
   text-align: center;
   text-shadow: 0 0 20px rgba(0, 121, 255, 0.5);
 }

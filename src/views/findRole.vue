@@ -3,13 +3,13 @@
     <Navlist></Navlist>
     <el-row style="margin-bottom: 20px" v-if="getRole1('saveRole')">
       <el-col :span="24">
-        <el-button
+        <!-- <el-button
           class="el-button-chaxun left top"
           type="primary"
           size="mini"
           @click="add"
           >添加</el-button
-        >
+        > -->
       </el-col>
     </el-row>
 
@@ -177,7 +177,7 @@
               value="CD_SUPER_ADMIN"
             ></el-option>
             <el-option label="CD_OPERATION" value="CD_OPERATION"></el-option>
-            <el-option label="CD_ADMIN" value="CD_ADMIN"></el-option>
+            <!-- <el-option label="CD_ADMIN" value="CD_ADMIN"></el-option> -->
           </el-select>
           <!-- <el-input
             

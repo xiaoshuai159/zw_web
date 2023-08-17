@@ -14,7 +14,8 @@
     <div class="top1">
       <div class="top1_title">
         <!-- 头部_一级标头 -->
-        <div class="title">银川市境外网址处置平台</div>
+        <!-- 中卫市境外网址处置平台 -->
+        <div class="title">中卫市境外涉诈网址发现预警平台</div>
         <div class="topguanli">
           <div class="role">
             <img :src="require('../assets/img/shouye/guanliyuan.png')" alt="" />
@@ -57,13 +58,13 @@
     <div class="center1">
       <!-- 内容_左侧 -->
       <div class="center1_left">
-        <!-- 内容_左侧_统计信息 -->
+        <!-- 内容_左侧_信息 -->
         <div class="left_Statistics">
-          <!-- 内容_左侧_统计信息_标题 -->
+          <!-- 内容_左侧_信息_标题 -->
           <div class="left_Statistics_title">
-            <div class="wenzi">统计信息</div>
+            <div class="wenzi">信息</div>
           </div>
-          <!-- 内容_左侧_统计信息_内容 -->
+          <!-- 内容_左侧_信息_内容 -->
           <div class="left_Statistics_center1">
             <div class="left_Statistics_center_first">
               <div class="left_Statistics_center_first_one">
@@ -78,32 +79,32 @@
                 </div>
                 <div class="left_Statistics_center_first_type">
                   <div class="left_Statistics_center_first_type_wenzi">
-                    4G总发现量
+                    总发现量
                   </div>
                   <div class="left_Statistics_center_first_type_num color">
-                    {{ this.numtongji.faxiannum }}<span class="p">条</span>
+                    {{ this.numtongji.chuzhinum }}<span class="p">条</span>
                   </div>
                 </div>
               </div>
               <div class="left_Statistics_center_first_two">
                 <div class="left_Statistics_center_first_img">
-                  <div class="left_Statistics_center_first_img_two">
-                    <div class="left_Statistics_center_first_img_twotwo">
-                      <img src="../assets/newimg/newhome/处置量.png" alt="" />
+                  <div class="left_Statistics_center_first_img_four">
+                    <div class="left_Statistics_center_first_img_fourfour">
+                      <img src="../assets/newimg/newhome/预警量.png" alt="" />
                     </div>
                   </div>
                 </div>
                 <div class="left_Statistics_center_first_type">
                   <div class="left_Statistics_center_first_type_wenzi">
-                    长安总发现量
+                    总预警量
                   </div>
-                  <div class="left_Statistics_center_first_type_num color1">
-                    {{ this.numtongji.chuzhinum }}<span class="p">条</span>
+                  <div class="left_Statistics_center_first_type_num color3">
+                    {{ this.numtongji.bocenum }}<span class="p">条</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="left_Statistics_center_first1">
+            <!-- <div class="left_Statistics_center_first1">
               <div class="left_Statistics_center_first_one te">
                 <div class="left_Statistics_center_first_img">
                   <div class="left_Statistics_center_first_img_three">
@@ -114,7 +115,7 @@
                 </div>
                 <div class="left_Statistics_center_first_type">
                   <div class="left_Statistics_center_first_type_wenzi">
-                    4G总预警量
+                    总预警量
                   </div>
                   <div class="left_Statistics_center_first_type_num color2">
                     {{ this.numtongji.yujinnum }}<span class="p">条</span>
@@ -122,34 +123,20 @@
                 </div>
               </div>
               <div class="left_Statistics_center_first_two te">
-                <div class="left_Statistics_center_first_img">
-                  <div class="left_Statistics_center_first_img_four">
-                    <div class="left_Statistics_center_first_img_fourfour">
-                      <img src="../assets/newimg/newhome/预警量.png" alt="" />
-                    </div>
-                  </div>
-                </div>
-                <div class="left_Statistics_center_first_type">
-                  <div class="left_Statistics_center_first_type_wenzi">
-                    长安总预警量
-                  </div>
-                  <div class="left_Statistics_center_first_type_num color3">
-                    {{ this.numtongji.bocenum }}<span class="p">条</span>
-                  </div>
-                </div>
+                
               </div>
-            </div>
+            </div> -->
             <!-- 底部光条 -->
             <div class="di"></div>
           </div>
         </div>
         <!-- 内容_左侧_发现类型 -->
         <div class="left_type">
-          <!-- 内容_左侧_统计信息_标题 -->
+          <!-- 内容_左侧_信息_标题 -->
           <div class="left_Statistics_title">
             <div class="wenzi">总发现类型</div>
           </div>
-          <!-- 内容_左侧_统计信息_内容 -->
+          <!-- 内容_左侧_信息_内容 -->
           <div class="left_Statistics_center2">
             <div
               id="myChart"
@@ -169,19 +156,19 @@
             <div class="youwenzi">
               <ul class="qiehuan">
                 <li
-                  v-on:click="qh1(false)"
-                  class="yujing456"
-                  :class="temp1 == false ? 'Active jinzhi' : ''"
+                  v-on:click="qh1(true)"
+                  class="Active jinzhi"
+                  
                 >
-                  <span>长安预警</span>
+                  <span>预警</span>
                 </li>
-                <li
+                <!-- <li
                   v-on:click="qh1(true)"
                   class="fanzhi123"
                   :class="temp1 == true ? 'Active jinzhi' : ''"
                 >
                   <span> 4G预警</span>
-                </li>
+                </li> -->
               </ul>
             </div>
 
@@ -277,15 +264,15 @@
           </div>
         </div>
         <!-- 内容——地图——文字标题-->
-        <div class="tishititle">
+        <div class="tishititle" >
           <div class="faxian">
             <div class="beij"></div>
-            <div class="jin">今日4G发现量</div>
+            <div class="jin">今日发现量</div>
             <div class="jin_num">
-              {{ this.daynum.faxian }} <i class="jin_num1">条</i>
+              {{ this.daynum.CAfaxian }} <i class="jin_num1">条</i>
             </div>
           </div>
-          <div class="fanzhi">
+          <!-- <div class="fanzhi">
             <div class="jin">今日长安发现量</div>
             <div class="jin_num3">
               {{ this.daynum.CAfaxian }} <i class="jin_num1">条</i>
@@ -296,10 +283,10 @@
             <div class="jin_num4">
               {{ this.daynum.fanzhi1 }} <i class="jin_num1">条</i>
             </div>
-          </div>
+          </div> -->
           <div class="lanjie">
             <div class="beij1"></div>
-            <div class="jin">今日长安预警量</div>
+            <div class="jin">今日预警量</div>
             <div class="jin_num2">
               {{ this.daynum.yujing }} <i class="jin_num1">条</i>
             </div>
@@ -315,7 +302,7 @@
             style="width: 100%; height: 100%"
           ></div>
 
-          <div data-v-4437755d="" class="legend-box">
+          <!-- <div data-v-4437755d="" class="legend-box">
             <div data-v-4437755d="" class="titleent">图例</div>
             <div data-v-4437755d="" class="down">
               <div data-v-4437755d="" class="area-box">
@@ -344,8 +331,6 @@
                           : 0
                         : ((max / 5) * 4).toFixed(0)
                     }}
-                    <!-- parseInt((max / 4) * 3).toFixed(0) -->
-                    <!-- {{ max > 4 ? parseInt(max / 4) * 3 : 0 }} -->
                   </div>
                 </div>
                 <div data-v-4437755d="" class="col-item">
@@ -354,7 +339,6 @@
                     class="item-icon"
                     style="background: #ff9119"
                   ></div>
-                  <!-- #1266bb -->
                   <div data-v-4437755d="" class="item-name">
                     {{
                       (max / 5) * 3 > 10000
@@ -369,9 +353,6 @@
                           : 0
                         : ((max / 5) * 4).toFixed(0)
                     }}
-                    <!-- {{ max > 4 ? parseInt(max / 4) * 2 + 1 : 0 }}-{{
-                            max > 4 ? parseInt(max / 4) * 3 : 0
-                          }} -->
                   </div>
                 </div>
                 <div data-v-4437755d="" class="col-item">
@@ -380,7 +361,6 @@
                     class="item-icon"
                     style="background: #c2c50f"
                   ></div>
-                  <!-- #1266bb -->
                   <div data-v-4437755d="" class="item-name">
                     {{
                       (max / 5) * 2 > 10000
@@ -395,9 +375,6 @@
                           : 0
                         : ((max / 5) * 3).toFixed(0)
                     }}
-                    <!-- {{ max > 4 ? parseInt(max / 4) * 2 + 1 : 0 }}-{{
-                            max > 4 ? parseInt(max / 4) * 3 : 0
-                          }} -->
                   </div>
                 </div>
                 <div data-v-4437755d="" class="col-item">
@@ -406,7 +383,6 @@
                     class="item-icon"
                     style="background: #05e0fd"
                   ></div>
-                  <!-- #1682f7  -->
                   <div data-v-4437755d="" class="item-name">
                     {{
                       max / 5 > 10000
@@ -421,9 +397,6 @@
                           : 0
                         : ((max / 5) * 2).toFixed(0)
                     }}
-                    <!-- {{ max > 4 ? (parseInt(max / 4) + 1 ): 0 }}-{{
-                            parseInt(max / 4/10000) * 2
-                          }} -->
                   </div>
                 </div>
                 <div data-v-4437755d="" class="col-item">
@@ -444,20 +417,20 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- 地图为画，最后画 -->
         </div>
       </div>
       <!-- 内容_右侧 -->
       <div class="center1_right">
-        <!-- 内容_左侧_环比统计-->
+        <!-- 内容_左侧_环比-->
         <div class="left_huanbi">
-          <!-- 内容_左侧_环比统计_标题 -->
+          <!-- 内容_左侧_环比_标题 -->
           <div class="left_Statistics_title">
-            <div class="wenzi">环比统计</div>
+            <div class="wenzi">环比</div>
           </div>
-          <!-- 内容_左侧_环比统计_内容 -->
+          <!-- 内容_左侧_环比_内容 -->
           <div class="left_Statistics_center">
             <div class="left_Statistics_center_one">
               <div class="left_Statistics_center_img">
@@ -473,7 +446,7 @@
                 />
               </div>
               <div class="left_Statistics_center_title">
-                <div class="titleone">本月4G发现</div>
+                <div class="titleone">本月发现</div>
                 <span class="titlenum">{{ this.fanzhicount1 }} </span>条
               </div>
               <div class="left_Statistics_center_line"></div>
@@ -521,7 +494,7 @@
                 />
               </div>
               <div class="left_Statistics_center_title">
-                <div class="titleone">本月4G预警</div>
+                <div class="titleone">本月预警</div>
                 <span class="titlenum1">{{ this.yujingcount1 }} </span>条
               </div>
               <div class="left_Statistics_center_line"></div>
@@ -560,21 +533,21 @@
           </div>
         </div>
 
-        <!-- 内容_左侧_高危区域感知 -->
+        <!-- 内容_左侧_高危发现趋势 -->
         <div class="left_region">
           <!-- 内容_左侧_预警趋势_标题 -->
           <div class="left_Statistics_title">
-            <div class="wenzi">高危区域感知</div>
+            <div class="wenzi">高危发现趋势感知</div>
           </div>
           <!-- 内容_左侧_预警趋势_内容 -->
           <div class="left_Statistics_centerg" id="gaowei">
-            <divg
+            
+            <!-- 修改前 <divg
               class="btm_one"
               v-for="(item, index) in phonelist"
               :key="index"
             >
               <div class="btm_one_top">
-                <!-- <img :src="item.pic" alt="" /> -->
                 <img
                   :src="
                     require('../assets/newimg/newhome/' +
@@ -600,8 +573,10 @@
                   </div>
                 </div>
               </div>
-            </divg>
-            <!-- 底部光条 -->
+            </divg> -->
+            <!-- 添加堆叠图 -->
+            <div id="myStackChart" ref="myStackChart" style="width: 100%; height: 100%;">
+            </div>
             <div class="di"></div>
           </div>
         </div>
@@ -617,14 +592,14 @@
                   class="yujing456"
                   :class="temp == false ? 'Active' : ''"
                 >
-                  <span>4G预警信息</span>
+                  <span>预警信息</span>
                 </li>
                 <li
                   v-on:click="qh(true)"
                   class="fanzhi123"
                   :class="temp == true ? 'Active' : ''"
                 >
-                  <span>4G发现信息</span>
+                  <span>发现信息</span>
                 </li>
               </ul>
             </div>
@@ -633,12 +608,12 @@
           <!-- 内容_左侧_信息详情_内容 -->
           <div class="left_Statistics_center">
             <div v-if="temp">
-              <div class="title_top">
+              <div class="title_top2">
                 <!-- <span>反制时间</span> <span>反制类型</span>
                 <span>反制协议</span> <span>访问域名</span> -->
 
                 <span>URL</span> <span>诈骗类型</span>
-                <span>数据源</span>
+                <!-- <span>数据源</span> -->
                 <span>时间</span>
               </div>
               <div>
@@ -649,19 +624,19 @@
                 >
                   <ul class="item">
                     <li v-for="(item, index) in listData" :key="index">
-                      <span class="date1" :title="item.url">{{
+                      <span class="date1" :title="item.url" style="text-align: left;">{{
                         item.url != undefined
-                          ? item.url.length > 16
-                            ? item.url.slice(0, 16) + '...'
+                          ? item.url.length > 14
+                            ? item.url.slice(0, 14) + '...'
                             : item.url
                           : ''
                       }}</span>
                       <span class="date1" :title="item.type">{{
                         item.type
                       }}</span>
-                      <span class="date1" :title="item.dataSource">{{
+                      <!-- <span class="date1" :title="item.dataSource">{{
                         item.dataSource == 'CA' ? '长安发现' : '4G发现'
-                      }}</span>
+                      }}</span> -->
                       <span class="title1" :title="item.discoverDate">{{
                         item.discoverDate
                       }}</span>
@@ -689,7 +664,7 @@
             </div>
             <div v-if="!temp">
               <div class="title_top1">
-                <span>手机号</span>
+                <span >手机号</span>
                 <span>预警等级</span>
                 <span>IP归属地</span>
                 <span>访问域名</span>
@@ -704,26 +679,26 @@
                     <ul class="item">
                       <li v-for="(item, index) in yulistData" :key="index">
                         <span class="title1" v-text="item.phone"></span
-                        ><span class="date1" v-text="item.warningLevel"></span>
+                        ><span class="date1" v-text="item.earlyGrade"></span>
                         <!-- <span class="title1" v-text="item.userIpAscription"></span
                       > -->
-                        <span class="date1" :title="item.victimAddress">{{
-                          item.victimAddress != undefined
-                            ? item.victimAddress.length > 10
-                              ? item.victimAddress.slice(0, 10) + '...'
-                              : item.victimAddress
+                        <span class="date1" :title="item.userIpAscription">{{
+                          item.userIpAscription != undefined
+                            ? item.userIpAscription.length > 10
+                              ? item.userIpAscription.slice(0, 10) + '...'
+                              : item.userIpAscription
                             : ''
                         }}</span>
                         <span
                           class="date1"
-                          v-text="item.fraudUrl"
-                          :title="item.fraudUrl"
+                          
+                          :title="item.domainName"
                         >
                           {{
-                            item.fraudUrl != undefined
-                              ? item.fraudUrl.length > 10
-                                ? item.fraudUrl.slice(0, 10) + '...'
-                                : item.fraudUrl
+                            item.domainName != undefined
+                              ? item.domainName.length > 9
+                                ? item.domainName.slice(0, 9) + '...'
+                                : item.domainName
                               : ''
                           }}
                         </span>
@@ -809,7 +784,8 @@
 
 <script>
 // import getDiscover from './getDiscover.vue'
-import yinchuan from '../static/jsonmap/yinchuan'
+import zhongwei from '../static/jsonmap/zhongwei.json'
+import echarts from 'echarts'
 import dayjs from 'dayjs'
 import 'echarts-gl'
 import { mapState, mapGetters, mapMutations } from 'vuex'
@@ -877,7 +853,7 @@ export default {
         ],
       },
 
-      //模块————高危区域感知时间
+      //模块————高危发现趋势时间
       whiteSearchList1: {
         startCreateTime1:
           dayjs().subtract(1, 'month').format('YYYY/MM/DD') +
@@ -889,13 +865,16 @@ export default {
           dayjs().format('YYYY/MM/DD') + ' ' + '23:' + '59:' + '59',
       },
       whiteSearchListday: {
-        startCreateTimeday: dayjs(
-          this.timerstart(dayjs().format('YYYY/MM/DD'), 1)
-        ).format('YYYY/MM/DD'),
+        // startCreateTimeday: dayjs(
+        //   this.timerstart(dayjs().format('YYYY/MM/DD'), 1)
+        // ).format('YYYY/MM/DD'),
 
-        endCreateTimeday: dayjs(
-          this.timerstart(dayjs().format('YYYY/MM/DD'), 1)
-        ).format('YYYY/MM/DD'),
+        // endCreateTimeday: dayjs(
+        //   this.timerstart(dayjs().format('YYYY/MM/DD'), 1)
+        // ).format('YYYY/MM/DD'),
+        startCreateTimeday: dayjs().format('YYYY/MM/DD'),
+
+        endCreateTimeday: dayjs().format('YYYY/MM/DD'),
       },
       whiteSearchListdayzhe: {
         startCreateTimedayzhe:
@@ -915,7 +894,7 @@ export default {
           '59:' +
           '59',
       },
-      //统计信息
+      //信息
       numtongji: {
         chuzhinum: '',
         bocenum: '',
@@ -953,61 +932,57 @@ export default {
         },
            {
           name: '预警',
-          path: '/getWarning',
+          // path: '/getWarning',
+          path:'/getWarningfourg'
         },
         {
           name: '发现',
           path: '/gitDiscoverca',
         },
      
-        {
-          name: '统计',
-          path: '/Statisticsht',
-        },
+        // {
+        //   name: '统计',
+        //   path: '/Statisticsht',
+        // },
         {
           name: '系统管理',
           path: '/findUser',
         },
-        {
-          name: '处置',
-          path: '',
-        },
+        // {
+        //   name: '处置',
+        //   path: '',
+        // },
 
-        {
-          name: '验证',
-          path: '',
-        },
+        // {
+        //   name: '验证',
+        //   path: '',
+        // },
       ],
       daohang2: [
-        {
+      {
           name: '首页',
           path: '/shouye',
         },
            {
           name: '预警',
-          path: '/getWarning',
+          // path: '/getWarning',
+          path:'/getWarningfourg'
         },
         {
           name: '发现',
           path: '/gitDiscoverca',
         },
-     
-        {
-          name: '统计',
-          path: '/Statisticsht',
-        },
+        // {
+        //   name: '处置',
+        //   path: '',
+        // },
 
-        {
-          name: '处置',
-          path: '',
-        },
-
-        {
-          name: '验证',
-          path: '',
-        },
+        // {
+        //   name: '验证',
+        //   path: '',
+        // },
       ],
-      //居中今日统计
+      //居中今日
       daynum: {
         faxian: 0,
         CAfaxian: 0,
@@ -1015,12 +990,12 @@ export default {
         fanzhi: 0,
         fanzhi1: 0,
       },
-      //环比统计
+      //环比zhongwei
       fanzhicount1: 0,
       fanzhipercent: '',
       yujingcount1: 0,
       yujingpercent: '',
-      //高危区域感知
+      //高危发现趋势
       phonelist: [],
       //信息详情
       temp: true,
@@ -1083,21 +1058,28 @@ export default {
       // loading1: false,
     }
   },
-  mounted() {},
+  // mounted() {   
+  //   this.$nextTick(()=>{
+  //     this.drawStackChart(xdata,ydata)
+  //   })
+  // },
   created() {
     this.dh()
     this.qx()
     this.houtai()
     this.tongji()
     this.faxianliexing()
+    this.faxianqushi()
     this.yujing()
     // this.daohangqx()
     this.daytongji()
     this.huanbitongji()
-    this.victim()
+    // this.victim() // 高危发现趋势
     this.fanzhilunbo()
     this.yujingnum()
     // this.daohangqx()
+    
+    
   },
 
   computed: {
@@ -1226,7 +1208,7 @@ export default {
       }
     },
 
-    // 模块————统计
+    // 模块————
     async tongji() {
       const { data: res } = await this.$http.get(
         '/discoverStatistic/getTotalByTimeRange',
@@ -1258,6 +1240,34 @@ export default {
         // this.numtongji.bocenum = 1026354
       }
     },
+    // 模块————高危发现趋势感知
+    async faxianqushi(){
+      const { data:res } = await this.$http.get('/discoverStatistic/weekStatistics')
+      if(res.code == 200){
+        // console.log(res.data);
+        const xData = [],yData = [] 
+        if(res.data.length > 0){
+          
+          res.data.forEach((item) => {
+            // console.log(item.percent);
+            // console.log(item);
+            xData.push(item.date)
+            yData.push(item.cnt)
+            
+          })
+          this.drawStackChart(xData,yData)
+        } else {
+          var html = `<span style="font-size:16px;color:#fff;margin-left:10px;margin-top:10px"></span><span style="margin-top:10px;margin-left:15px;color:#fff;font-size:12px"></span><br/><span class="echarts-nodate" style="color:#fff;margin-left:10px;">暂无数据</span>`
+          document.getElementById('myChart').innerHTML = html
+          document
+            .getElementById('myChart')
+            .removeAttribute('_echarts_instance_')
+
+          return
+        }
+      }
+      
+    },
     // 模块————总发现类型
     async faxianliexing() {
       // this.faxianleftnum.type = [];
@@ -1282,14 +1292,18 @@ export default {
             } else if (item.type == 'KF') {
               item.type = '冒充客服类'
             } else if (item.type == 'DK') {
-              item.type = '贷款代办信用卡类'
+              item.type = '贷款'
             } else if (item.type == 'SD') {
               item.type = '刷单返利类'
             } else if (item.type == 'GJF') {
               item.type = '冒充公检法类'
             } else if (item.type == 'HC') {
               item.type = '灰产'
-            } else if (item.type == 'JJGW') {
+            }else if (item.type == 'LC') {
+            item.type = '理财'
+          }else if (item.type == 'DS') {
+            item.type = '电商类诈骗'
+          } else if (item.type == 'JJGW') {
               item.type = '冒充军警购物诈骗'
             } else if (item.type == 'JY') {
               item.type = '网络婚恋、交友类'
@@ -1381,6 +1395,13 @@ export default {
       let option1 = {
         tooltip: {
           trigger: 'item',
+          // textStyle: {
+          //   fontSize: 9, // 调整字号大小
+          //   lineHeight: 24, // 调整行高
+          // },
+          position: ['50%', '50%'], // 将 tooltip 定位到图表中心
+          // padding: 10, // 调整 tooltip 内容与边框的间距
+          // extraCssText: 'max-width: 80vw; max-height: 80vh; overflow: auto;', // 调整 tooltip 的最大宽度和高度，并添加滚动条
           formatter: function (val) {
             // console.log(val)
             return (
@@ -1528,7 +1549,108 @@ export default {
         }
       }
     },
+    // 新增堆叠图
+    drawStackChart(xdata,ydata){
+      xdata = xdata.map((item)=>{
+        const temp = item.split('-')
+        item = temp[1]+'/'+temp[2]
+        return item
+      })
+      var stack_qx = this.$refs.myStackChart;
+      let myStackChart1 = this.$echarts.init(stack_qx)
+      window.addEventListener('resize', function () {
+        myStackChart1.resize()
+        // console.log(1)
+      })
+      myStackChart1.clear()
 
+      let option = {
+        tooltip: {
+          trigger: 'axis',
+
+          axisPointer: {
+            lineStyle: {
+              color: '#66B3FF',
+            },
+          },
+        },
+        // legend: {
+        //     data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
+        // },
+        // toolbox: {
+        //     feature: {
+        //         saveAsImage: {}
+        //     }
+        // },
+
+        grid: {
+            top:'15%',
+            left: '8%',
+            right: '8%',
+            bottom: '8%',
+            containLabel: true
+        },
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: false,
+                data: xdata,
+                axisLine:{
+                  lineStyle:{
+                    color:'#666',
+                    width:1
+                  }
+                },
+                axisLabel:{
+                  textStyle:{
+                    color:'#f7ffff'
+                  }
+                },
+                // splitLine:{
+                //   show:false
+                // }
+                // splitLine: {
+                  // lineStyle:{
+                  //     color: ['#80a2c0'],
+                  //     width: 1,
+                  //     type: 'solid'
+                  //     }
+                //   }                
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value',
+                axisLine:{
+                  show:false,
+                  // lineStyle:{
+                  //   color:'#80a2c0'
+                  // }
+                },
+                axisTick:{show:false},
+                splitLine: { show: false },
+                splitLine: {
+                  lineStyle: {
+                    color: ['#1e324a'],
+                  },
+                },
+                axisLabel:{
+                  textStyle:{
+                    color:'#828d9a'
+                  }
+                }
+            }
+        ],
+        series: [
+              {
+              data: ydata,
+              type: 'line'
+          }
+        ]
+      };
+      myStackChart1.setOption(option)
+      
+    },
     //左侧——趋势
     drawLinezhexian() {
       // this.loading1=true
@@ -1552,7 +1674,7 @@ export default {
         animation: false,
         //     title: {
         //   x: "center",
-        //   text: "上传域名统计", //xin
+        //   text: "上传域名", //xin
         //   textStyle: {
         //     //xin
         //     fontSize: 20,
@@ -1737,7 +1859,7 @@ export default {
         this.daohang = [...arr, ...this.daohang]
       }
     },
-    // 模块————今日实时统计
+    // 模块————今日实时
     async daytongji() {
       const { data: res } = await this.$http.get(
         '/discoverStatistic/getTotalByTimeRange',
@@ -1752,15 +1874,15 @@ export default {
         // Object.keys(res.data).length!=0
 
         if (Object.getOwnPropertyNames(res.data).length != 0) {
-          this.daynum.faxian = res.data.OUTNETDISCOVER
+          // this.daynum.faxian = res.data.OUTNETDISCOVER
           this.daynum.CAfaxian = res.data.CADISCVOER
         } else {
-          this.daynum.faxian = 0
+          // this.daynum.faxian = 0
           this.daynum.CAfaxian = 0
         }
       }
     },
-    // 模块————环比统计
+    // 模块————环比
     async huanbitongji() {
       const { data: res } = await this.$http.get(
         '/discoverStatistic/getMonthOnMonth'
@@ -1776,7 +1898,7 @@ export default {
         //  }
       }
     },
-    // 模块————高危区域感知
+    // 模块————高危发现趋势
     async victim() {
       // const discoverCountVo = {
       //   address: '',
@@ -1871,7 +1993,11 @@ export default {
             item.type = '冒充公检法类'
           } else if (item.type == 'HC') {
             item.type = '灰产'
-          } else if (item.type == 'JJGW') {
+          } else if (item.type == 'LC') {
+            item.type = '理财'
+          }else if (item.type == 'DS') {
+            item.type = '电商类诈骗'
+          }else if (item.type == 'JJGW') {
             item.type = '冒充军警购物诈骗'
           } else if (item.type == 'JY') {
             item.type = '网络婚恋、交友类'
@@ -1897,7 +2023,7 @@ export default {
     async yujinglunbo() {
       const { data: res } = await this.$http.get('/warning_4g/selectCATop100')
       if (res.code == 200) {
-        // console.log(res.data);
+        console.log(res.data);
         this.yulistData = res.data
       }
     },
@@ -1920,7 +2046,8 @@ export default {
       //       this.mapquan1()
       //     })
       // }
-      this.maplist = yinchuan
+      // this.maplist = yinchuan
+      this.maplist = zhongwei
       this.mapquan1()
     },
     //删除key
@@ -2112,25 +2239,25 @@ export default {
             },
           },
         ],
-        tooltip: {
-          // trigger: "item",
-          trigger: 'item',
-          backgroundColor: 'rgba(3,54,92,.5)',
-          borderWidth: 0,
-          formatter: function (val) {
-            // if (val.data.value != 0) {
-            return val.data.name + '<br>' + '预警量：' + val.data.value
-            // }
-          },
-          // formatter: {b} +':' +{c},
-          // formatter:function(val){
-          //   console.log(val);
-          // },
-          axisPointer: {
-            animation: false,
-          },
-          show: true,
-        },
+        // tooltip: {
+        //   // trigger: "item",
+        //   trigger: 'item',
+        //   backgroundColor: 'rgba(3,54,92,.5)',
+        //   borderWidth: 0,
+        //   formatter: function (val) {
+        //     // if (val.data.value != 0) {
+        //     return val.data.name + '<br>' + '预警量：' + val.data.value
+        //     // }
+        //   },
+        //   // formatter: {b} +':' +{c},
+        //   // formatter:function(val){
+        //   //   console.log(val);
+        //   // },
+        //   axisPointer: {
+        //     animation: false,
+        //   },
+        //   show: true,
+        // },
         visualMap: {
           type: 'piecewise', // 类型为分段型
           splitNumber: 4,
@@ -2196,7 +2323,7 @@ export default {
           {
             map: 'YC',
             type: 'map',
-
+            silent:true,   // 禁用地图hover事件
             aspectScale: 0.95, //长宽比
             zoom: 1.2,
             roam: false,
@@ -2216,7 +2343,7 @@ export default {
                 borderColor: 'rgb(125, 187, 253)', // 图形的描边颜色 #0AAEB0
                 borderWidth: 3, // 描边线宽。
                 borderType: 'solid', // 柱条的描边类型。
-                areaColor: 'rgb(35, 63, 83)', // 图形的颜色 #233F53
+                areaColor: 'rgb(64, 128, 207)', // 图形的颜色 #233F53
 
                 label: {
                   show: true, // 显示区域名称
@@ -2511,10 +2638,12 @@ export default {
 .title {
   position: absolute;
   left: 38%;
-  top: 5%;
+  top: 15%;
   font-family: 'heiti';
-  font-size: 38px;
-  letter-spacing: 5px /* 12/16 */;
+  
+  font-size: 31px;
+  // font-size: 38px;
+  // letter-spacing: 5px /* 12/16 */;
   background-image: linear-gradient(0deg, #f8f8fb 0%, #8ec4fd 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2723,7 +2852,7 @@ export default {
 }
 .wenzi {
   position: absolute;
-  width: 30%;
+  width: 40%;
   height: 30px;
   top: 50%;
   transform: translateY(-50%);
@@ -2823,8 +2952,11 @@ export default {
   float: left;
 }
 .left_Statistics_center_first_img {
-  width: 50px;
-  height: 50px;
+  // width: 50px;
+  // height: 50px;
+  margin-top: 80px;
+  width: 75px;
+  height: 75px;
 }
 
 .left_Statistics_center_first_img_one {
@@ -2838,6 +2970,7 @@ export default {
   animation-iteration-count: infinite;
 }
 .left_Statistics_center_first_img_oneone {
+  // 改之前
   position: absolute;
   left: 50%;
   top: 50%;
@@ -2847,6 +2980,10 @@ export default {
   border-radius: 50%;
   border: 2px solid #0887b7;
   background-color: #112c48;
+  // 改之后
+  // width: 90%;
+  // height: 90%;
+  // margin-top: 20px;
 }
 .left_Statistics_center_first_img_one img {
   width: 50%;
@@ -2966,12 +3103,17 @@ export default {
   height: 50px;
 }
 .left_Statistics_center_first_type_wenzi {
-  font-size: 14px;
+  // 改之前
+  // font-size: 14px;
   color: #fcfffe;
-  letter-spacing: 1px;
+  // letter-spacing: 1px;
   // margin-bottom: 10px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin:27px 0 22px 5px
 }
 .left_Statistics_center_first_type_num {
+  margin-left: 5px;
   font-size: 20px;
 }
 .color {
@@ -3222,6 +3364,9 @@ export default {
   // margin-bottom: 26px;
 }
 .tishititle {
+  display: flex;
+  justify-content: center;
+  // align-items: center;
   width: 100%;
   height: 13%;
   margin-top: 22px;
@@ -3237,7 +3382,7 @@ export default {
   // background: ;
 }
 .faxian {
-  margin-left: 88px !important;
+  // margin-left: 88px !important;
   background: url('../assets/newimg/newhome/框 实时.png') no-repeat;
   background-size: 100% 100%;
   text-align: center;
@@ -3670,6 +3815,41 @@ export default {
 .xinix {
   overflow: hidden;
 }
+.title_top2 {
+  width: 100%;
+  // height: 30px;
+  height: 17%;
+  background-color: transparent;
+  border: 1px solid #1f436c;
+  padding: 1% 0;
+}
+.title_top2 span:nth-child(1) {
+  display: inline-block;
+  width: 27%;
+  line-height: 17%;
+  color: #80a2c0;
+  text-align: center;
+  font-size: 14px;
+}
+.title_top2 span:nth-child(2) {
+  display: inline-block;
+  width: 38%;
+  line-height: 17%;
+  color: #80a2c0;
+  text-align: center;
+  font-size: 14px;
+  margin-left: 1%;
+}
+.title_top2 span:nth-child(3) {
+  display: inline-block;
+  width: 29%;
+  line-height: 17%;
+  color: #80a2c0;
+  text-align: center;
+  font-size: 14px;
+  margin-left: 2%;
+}
+
 .title_top {
   width: 100%;
   // height: 30px;
@@ -3680,7 +3860,7 @@ export default {
 }
 .title_top span:nth-child(1) {
   display: inline-block;
-  width: 26%;
+  width: 35%;
   line-height: 17%;
   color: #80a2c0;
   text-align: center;
@@ -3737,7 +3917,7 @@ export default {
 }
 .seamless-warp1 span:nth-child(2) {
   display: inline-block;
-  width: 15%;
+  width: 39%;
   margin-left: 1%;
   height: 100%;
   text-align: center;
@@ -3747,7 +3927,7 @@ export default {
 }
 .seamless-warp1 span:nth-child(3) {
   display: inline-block;
-  width: 19%;
+  width: 29%;
   margin-left: 3%;
   height: 100%;
   text-align: center;
@@ -3755,16 +3935,16 @@ export default {
   -webkit-transform: scal(0.83);
   overflow: hidden;
 }
-.seamless-warp1 span:nth-child(4) {
-  display: inline-block;
-  width: 30%;
-  margin-left: 2%;
-  height: 100%;
-  text-align: center;
-  font-size: 10px;
-  -webkit-transform: scal(0.83);
-  overflow: hidden;
-}
+// .seamless-warp1 span:nth-child(4) {
+//   display: inline-block;
+//   width: 30%;
+//   margin-left: 2%;
+//   height: 100%;
+//   text-align: center;
+//   font-size: 10px;
+//   -webkit-transform: scal(0.83);
+//   overflow: hidden;
+// }
 #dianre {
   display: inline-block;
   width: 5px;
@@ -3802,7 +3982,7 @@ export default {
 }
 .title_top1 span:nth-child(1) {
   display: inline-block;
-  width: 20%;
+  width: 25%;
   line-height: 17%;
   color: #80a2c0;
   text-align: center;
@@ -3810,7 +3990,7 @@ export default {
 }
 .title_top1 span:nth-child(2) {
   display: inline-block;
-  width: 17%;
+  width: 16%;
   line-height: 17%;
   color: #80a2c0;
   text-align: center;
@@ -3819,7 +3999,7 @@ export default {
 }
 .title_top1 span:nth-child(3) {
   display: inline-block;
-  width: 35%;
+  width: 25%;
   line-height: 17%;
   color: #80a2c0;
   text-align: center;
@@ -3851,7 +4031,7 @@ export default {
 }
 .seamless-warp span:nth-child(1) {
   display: inline-block;
-  width: 20%;
+  width: 25%;
   height: 100%;
   text-align: center;
   font-size: 10px;
@@ -3860,7 +4040,7 @@ export default {
 }
 .seamless-warp span:nth-child(2) {
   display: inline-block;
-  width: 15%;
+  width: 12%;
   margin-left: 1%;
   height: 100%;
   text-align: center;
@@ -3870,7 +4050,7 @@ export default {
 }
 .seamless-warp span:nth-child(3) {
   display: inline-block;
-  width: 35%;
+  width: 30%;
   margin-left: 3%;
   height: 100%;
   text-align: center;

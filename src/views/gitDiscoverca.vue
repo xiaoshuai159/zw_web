@@ -41,9 +41,10 @@
               class="el-input-width changdu"
               v-model.trim="newdomainSimpleVo.source"
               placeholder="来源"
-              clearable
-              @clear="modelType1_clearFun(newdomainSimpleVo.source)"
+              :clearable="false"
+              
             >
+            <!-- @clear="modelType1_clearFun(newdomainSimpleVo.source)" -->
               <el-option
                 v-for="item in selectData.sourceTypeData"
                 :key="item.value"
@@ -56,7 +57,7 @@
 
           <!-- 诈骗大类 -->
           <el-form-item label="类型">
-            <el-cascader
+            <!-- <el-cascader
               ref="cascader"
               v-model.trim="newdomainSimpleVo.type"
               :options="options"
@@ -67,7 +68,15 @@
               :show-all-levels="false"
               @change="handleChange"
               clearable
-            ></el-cascader>
+            ></el-cascader> -->
+            <el-select v-model.trim="newdomainSimpleVo.type" clearable placeholder="请选择">
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value">
+              </el-option>
+            </el-select>
           </el-form-item>
 
           <el-form-item>
@@ -125,26 +134,27 @@
       <el-table-column label="发现日期" prop="discoverDate">
         <!-- min-width="10%" -->
       </el-table-column>
-      <el-table-column label="URL" prop="url" show-overflow-tooltip>
+      <el-table-column label="URL"  prop="url" show-overflow-tooltip >
         <template slot-scope="scope">
-          <div
-            class="dianji"
-            v-if="scope.row.url"
-            @click="jietu(scope.row.discoverDate, scope.row.imageName)"
-            :title="clicktitle"
+          <span            
+            v-if="scope.row.url"        
+                
           >
+          <!-- :title="clicktitle" -->
+          <!-- class="dianji" -->
+          <!-- @click="jietu(scope.row.discoverDate, scope.row.imageName)" 取消点击事件 -->
             {{ scope.row.url }}
-          </div>
+        </span>
         </template>
       </el-table-column>
 
-      <el-table-column label="来源" prop="dataSource">
+      <!-- <el-table-column label="来源" prop="dataSource">
         <template slot-scope="scope">
           <div v-if="scope.row.dataSource">
             {{ scope.row.dataSource == 'CA' ? '长安' : '4G' }}
           </div>
         </template>
-      </el-table-column>
+      </el-table-column> -->
       <el-table-column label="诈骗大类" prop="type">
         <template slot-scope="scope">
           {{ bigtype(scope.row.type) }}
@@ -260,7 +270,7 @@ export default {
         // ],
         //发现日期
         url: null, //URL
-        source: null, //来源
+        source: '中卫', //来源
         type: null, //诈骗大类
         typesmall: null, //诈骗小类
         typebig: null,
@@ -289,271 +299,314 @@ export default {
       xianshititle: '暂无图片',
       clicktitle: '点击查看图片',
       xinshi: false,
-      //下拉框的选项数据
-      options: [
-        {
-          value: 'KF',
-          label: '冒充客服类',
-          children: [
-            {
-              value: 'kf_ds',
-              label: '冒充电商客服',
-            },
-            {
-              value: 'kf_wl',
-              label: '冒充物流客服',
-            },
-            {
-              value: 'kf_other',
-              label: '冒充其他客服类',
-            },
-          ],
-        },
-        {
-          value: 'GJF',
-          label: '冒充公检法类',
-          children: [
-            {
-              value: 'gjf_mc',
-              label: '冒充公检法',
-            },
-            {
-              value: 'gjf_gs',
-              label: '工商平台类',
-            },
-            {
-              value: 'gjf_etc',
-              label: 'ETC通行卡',
-            },
-            {
-              value: 'gjf_other',
-              label: '其他政府机关或单位组织',
-            },
-          ],
-        },
-        {
-          value: 'SD',
-          label: '刷单返利类',
-          children: [
-            {
-              value: 'sd_cz',
-              label: '充值（红包）返利',
-            },
-          ],
-        },
-        {
-          value: 'DK',
-          label: '贷款代办信用卡类',
-          children: [
-            {
-              value: 'dk_xyk',
-              label: '虚假代办信用卡',
-            },
-            {
-              value: 'dk_te',
-              label: '虚假提额套现',
-            },
-            {
-              value: 'dk_dk',
-              label: '虚假贷款',
-            },
-            {
-              value: 'dk_other',
-              label: '其他贷款类',
-            },
-          ],
-        },
-        {
-          value: 'JJGW',
-          label: '冒充军警购物诈骗',
-          children: [
-            {
-              value: 'JJGW',
-              label: '冒充军警购物诈骗',
-            },
-          ],
-        },
-        {
-          value: 'SZP',
-          label: '杀猪盘',
-          children: [
-            {
-              value: 'szp_lc',
-              label: '虚假投资理财类',
-            },
-            {
-              value: 'szp_dubo',
-              label: '博彩彩票',
-            },
-            {
-              value: 'szp_ty',
-              label: '体育直播，比分竞猜',
-            },
-            {
-              value: 'szp_yx',
-              label: '棋牌游戏',
-            },
-          ],
-        },
+      //下拉框的选项数据  改之前：层级下拉框
+      // options: [
+      //   {
+      //     value: 'KF',
+      //     label: '冒充客服类',
+      //     children: [
+      //       {
+      //         value: 'kf_ds',
+      //         label: '冒充电商客服',
+      //       },
+      //       {
+      //         value: 'kf_wl',
+      //         label: '冒充物流客服',
+      //       },
+      //       {
+      //         value: 'kf_other',
+      //         label: '冒充其他客服类',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     value: 'GJF',
+      //     label: '冒充公检法类',
+      //     children: [
+      //       {
+      //         value: 'gjf_mc',
+      //         label: '冒充公检法',
+      //       },
+      //       {
+      //         value: 'gjf_gs',
+      //         label: '工商平台类',
+      //       },
+      //       {
+      //         value: 'gjf_etc',
+      //         label: 'ETC通行卡',
+      //       },
+      //       {
+      //         value: 'gjf_other',
+      //         label: '其他政府机关或单位组织',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     value: 'SD',
+      //     label: '刷单返利类',
+      //     children: [
+      //       {
+      //         value: 'sd_cz',
+      //         label: '充值（红包）返利',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     value: 'DK',
+      //     label: '贷款代办信用卡类',
+      //     children: [
+      //       {
+      //         value: 'dk_xyk',
+      //         label: '虚假代办信用卡',
+      //       },
+      //       {
+      //         value: 'dk_te',
+      //         label: '虚假提额套现',
+      //       },
+      //       {
+      //         value: 'dk_dk',
+      //         label: '虚假贷款',
+      //       },
+      //       {
+      //         value: 'dk_other',
+      //         label: '其他贷款类',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     value: 'JJGW',
+      //     label: '冒充军警购物诈骗',
+      //     children: [
+      //       {
+      //         value: 'JJGW',
+      //         label: '冒充军警购物诈骗',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     value: 'SZP',
+      //     label: '杀猪盘',
+      //     children: [
+      //       {
+      //         value: 'szp_lc',
+      //         label: '虚假投资理财类',
+      //       },
+      //       {
+      //         value: 'szp_dubo',
+      //         label: '博彩彩票',
+      //       },
+      //       {
+      //         value: 'szp_ty',
+      //         label: '体育直播，比分竞猜',
+      //       },
+      //       {
+      //         value: 'szp_yx',
+      //         label: '棋牌游戏',
+      //       },
+      //     ],
+      //   },
 
-        {
-          value: 'JY',
-          label: '网络婚恋、交友类',
-          children: [
-            {
-              value: 'jy_jr',
-              label: '冒充外国军人',
+      //   {
+      //     value: 'JY',
+      //     label: '网络婚恋、交友类',
+      //     children: [
+      //       {
+      //         value: 'jy_jr',
+      //         label: '冒充外国军人',
+      //       },
+      //       {
+      //         value: 'jy_hl',
+      //         label: '网络婚恋',
+      //       },
+      //       {
+      //         value: 'jy_jy',
+      //         label: '网络交友，聊天交友',
+      //       },
+      //       {
+      //         value: 'jy_other',
+      //         label: '其他交友类',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     value: 'ZX',
+      //     label: '虚假征信类',
+      //     children: [
+      //       {
+      //         value: 'zx_xyd',
+      //         label: '消除校园贷记录',
+      //       },
+      //       {
+      //         value: 'zx_bljl',
+      //         label: '消除不良记录',
+      //       },
+      //       {
+      //         value: 'zx_other',
+      //         label: '其他征信',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     value: 'MC',
+      //     label: '冒充领导、熟人类',
+      //     children: [
+      //       {
+      //         value: 'mc_ld',
+      //         label: '冒充领导',
+      //       },
+      //       {
+      //         value: 'mc_sr',
+      //         label: '冒充熟人',
+      //       },
+      //       {
+      //         value: 'mc_gz',
+      //         label: '冒充公众人物',
+      //       },
+      //       {
+      //         value: 'mc_other',
+      //         label: '冒充其他身份类',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     value: 'YX',
+      //     label: '网络游戏产品虚假交易类',
+      //     children: [
+      //       {
+      //         value: 'yx_card',
+      //         label: '游戏币、游戏点卡诈骗',
+      //       },
+      //       {
+      //         value: 'yx_zhzb',
+      //         label: '游戏账号、游戏装备诈骗',
+      //       },
+      //       {
+      //         value: 'yx_other',
+      //         label: '其他游戏产品虚假交易类',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     value: 'OTHER',
+      //     label: '其他类型诈骗',
+      //     children: [
+      //       {
+      //         value: 'other_zj',
+      //         label: '虚假中奖诈骗',
+      //       },
+      //       {
+      //         value: 'other_zp',
+      //         label: '虚假招聘',
+      //       },
+      //       {
+      //         value: 'other_tp',
+      //         label: 'ps图片诈骗',
+      //       },
+      //       {
+      //         value: 'other_jp',
+      //         label: '机票退改签诈骗',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     value: 'APP',
+      //     label: '分发平台',
+      //     children: [
+      //       {
+      //         value: 'app_ff',
+      //         label: '分发平台',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     value: 'XZYM',
+      //     label: '下载页面',
+      //     children: [
+      //       {
+      //         value: 'xzym',
+      //         label: '下载页面',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     value: 'HC',
+      //     label: '灰产',
+      //     children: [
+      //       {
+      //         value: 'hc_fw',
+      //         label: '灰产服务',
+      //       },
+      //       {
+      //         value: 'hc_other',
+      //         label: '灰产其他',
+      //       },
+      //       {
+      //         value: 'hc',
+      //         label: '灰产',
+      //       },
+      //       // {
+      //       //   value: 'hc_gw',
+      //       //   label: '虚假购物',
+      //       // },
+      //       // {
+      //       //   value: 'hc_fw',
+      //       //   label: '虚假服务',
+      //       // },
+      //       // {
+      //       //   value: 'hc_other',
+      //       //   label: '其他电商类',
+      //       // },
+      //     ],
+      //   },
+      // ],
+        // 改之后：单级别下拉框
+        options:[
+          {
+              value: 'DK',
+              label: '贷款',
             },
             {
-              value: 'jy_hl',
-              label: '网络婚恋',
+              value: 'SD',
+              label: '刷单返利类',
             },
             {
-              value: 'jy_jy',
-              label: '网络交友，聊天交友',
+              value: 'GJF',
+              label: '冒充公检法类',
             },
             {
-              value: 'jy_other',
-              label: '其他交友类',
-            },
-          ],
-        },
-        {
-          value: 'ZX',
-          label: '虚假征信类',
-          children: [
-            {
-              value: 'zx_xyd',
-              label: '消除校园贷记录',
+              value: 'LC',
+              label: '理财',
             },
             {
-              value: 'zx_bljl',
-              label: '消除不良记录',
+              value: 'SZP',
+              label: '杀猪盘',
             },
             {
-              value: 'zx_other',
-              label: '其他征信',
-            },
-          ],
-        },
-        {
-          value: 'MC',
-          label: '冒充领导、熟人类',
-          children: [
-            {
-              value: 'mc_ld',
-              label: '冒充领导',
+              value: 'KF',
+              label: '冒充客服类',
             },
             {
-              value: 'mc_sr',
-              label: '冒充熟人',
+              value: 'DS',
+              label: '电商类诈骗',
             },
             {
-              value: 'mc_gz',
-              label: '冒充公众人物',
+              value: 'JY',
+              label: '网络婚恋、交友类',
             },
             {
-              value: 'mc_other',
-              label: '冒充其他身份类',
-            },
-          ],
-        },
-        {
-          value: 'YX',
-          label: '网络游戏产品虚假交易类',
-          children: [
-            {
-              value: 'yx_card',
-              label: '游戏币、游戏点卡诈骗',
+              value: 'ZX',
+              label: '虚假征信类',
             },
             {
-              value: 'yx_zhzb',
-              label: '游戏账号、游戏装备诈骗',
+              value: 'YX',
+              label: '网络游戏产品虚假交易类',
             },
-            {
-              value: 'yx_other',
-              label: '其他游戏产品虚假交易类',
-            },
-          ],
-        },
-        {
-          value: 'OTHER',
-          label: '其他类型诈骗',
-          children: [
-            {
-              value: 'other_zj',
-              label: '虚假中奖诈骗',
-            },
-            {
-              value: 'other_zp',
-              label: '虚假招聘',
-            },
-            {
-              value: 'other_tp',
-              label: 'ps图片诈骗',
-            },
-            {
-              value: 'other_jp',
-              label: '机票退改签诈骗',
-            },
-          ],
-        },
-        {
-          value: 'APP',
-          label: '分发平台',
-          children: [
-            {
-              value: 'app_ff',
-              label: '分发平台',
-            },
-          ],
-        },
-        {
-          value: 'XZYM',
-          label: '下载页面',
-          children: [
-            {
-              value: 'xzym',
-              label: '下载页面',
-            },
-          ],
-        },
-        {
-          value: 'HC',
-          label: '灰产',
-          children: [
-            {
-              value: 'hc_fw',
-              label: '灰产服务',
-            },
-            {
-              value: 'hc_other',
-              label: '灰产其他',
-            },
-            {
-              value: 'hc',
-              label: '灰产',
-            },
-            // {
-            //   value: 'hc_gw',
-            //   label: '虚假购物',
-            // },
-            // {
-            //   value: 'hc_fw',
-            //   label: '虚假服务',
-            // },
-            // {
-            //   value: 'hc_other',
-            //   label: '其他电商类',
-            // },
-          ],
-        },
-      ],
-
+        ],
       selectData: {
         sourceTypeData: [
-          { value: 'CA', label: '长安' },
-          { value: 'YC', label: '4G' },
+          // { value: 'CA', label: '长安' },
+          // { value: 'YC', label: '4G' },
+          { value: 'ZW', label: '中卫' },
         ],
 
         fraudypeData: [
@@ -609,13 +662,13 @@ export default {
 
     // console.log();
     //层级下拉框
-    setInterval(function () {
-      document.querySelectorAll('.el-cascader-node__label').forEach((el) => {
-        el.onclick = function () {
-          if (this.previousElementSibling) this.previousElementSibling.click()
-        }
-      })
-    }, 1000)
+    // setInterval(function () {
+    //   document.querySelectorAll('.el-cascader-node__label').forEach((el) => {
+    //     el.onclick = function () {
+    //       if (this.previousElementSibling) this.previousElementSibling.click()
+    //     }
+    //   })
+    // }, 1000)
   },
   methods: {
     yangshi() {
@@ -681,6 +734,9 @@ export default {
     },
     //初始化获取数据
     async getTabData() {
+      if (this.newdomainSimpleVo.type == '') {
+        this.newdomainSimpleVo.type = null
+      }
       let getlist = {
         discoverTimeDTO: {
           startTime: this.whiteSearchList.startCreateTime,
@@ -688,12 +744,12 @@ export default {
         },
 
         pageable: this.mypageable,
-        sourceEnum: this.newdomainSimpleVo.source,
-        type: this.newdomainSimpleVo.typebig,
+        // sourceEnum: this.newdomainSimpleVo.source,
+        type: this.newdomainSimpleVo.type,
         url: this.newdomainSimpleVo.url,
-        category: this.newdomainSimpleVo.typesmall,
+        // category: this.newdomainSimpleVo.type,
       }
-
+      console.log(getlist);
       const { data: res } = await this.$http.post(
         '/discover/getDiscoverPage',
         getlist
@@ -758,11 +814,14 @@ export default {
 
     //重置方法
     resetFun() {
+      // this.newdomainSimpleVo.dateValue_find = null
+      // this.newdomainSimpleVo = {
+      //   domain: null, //域名
+      //   dateValue_find: null, //时间
+      // }
+      this.newdomainSimpleVo.type = null
+      this.newdomainSimpleVo.url = null
       this.newdomainSimpleVo.dateValue_find = null
-      this.newdomainSimpleVo = {
-        domain: null, //域名
-        dateValue_find: null, //时间
-      }
       ;(this.whiteSearchList = {
         startCreateTime: null,
         endCreateTime: null,
@@ -802,6 +861,9 @@ export default {
       // this.tableDatalist.forEach((item) => {
       //   arr.push(item.id)
       // })
+      if (this.newdomainSimpleVo.type == '') {
+        this.newdomainSimpleVo.type = null
+      }
       let getlist = {
         discoverTimeDTO: {
           startTime: this.whiteSearchList.startCreateTime,
@@ -809,11 +871,12 @@ export default {
         },
 
         pageable: this.mypageable,
-        sourceEnum: this.newdomainSimpleVo.source,
-        type: this.newdomainSimpleVo.typebig,
+        // sourceEnum: this.newdomainSimpleVo.source,
+        type: this.newdomainSimpleVo.type,
         url: this.newdomainSimpleVo.url,
-        category: this.newdomainSimpleVo.typesmall,
+        // category: this.newdomainSimpleVo.type,
       }
+      console.log(getlist);
       this.loadingbuttext = '...加载中'
       this.loadingbut = true
       this.$http({
@@ -1039,9 +1102,12 @@ export default {
         case 'SZP':
           status = '杀猪盘'
           break
-        // case 'DS':
-        //   status = '电商类诈骗'
-        //   break
+        case 'DS':
+          status = '电商类诈骗'
+          break
+        case 'LC':
+          status = '理财'
+          break
         case 'JY':
           status = '网络婚恋、交友类'
           break

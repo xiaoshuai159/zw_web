@@ -73,59 +73,64 @@ export default {
         },
             {
           name: '预警',
-          path: '/getWarning',
+          // path: '/getWarning',
+          path:'/getWarningfourg'
         },
         {
           name: '发现',
           path: '/gitDiscoverca',
         },
     
-        {
-          name: '统计',
-          path: '/Statisticsht',
-        },
+        // {
+        //   name: '统计',
+        //   path: '/Statisticsht',
+        // },
         {
           name: '系统管理',
           path: '/findUser',
         },
-        {
-          name: '处置',
-          path: '',
-        },
+        // {
+        //   name: '处置',
+        //   path: '',
+        // },
 
-        {
-          name: '验证',
-          path: '',
-        },
+        // {
+        //   name: '验证',
+        //   path: '',
+        // },
       ],
       daohang2: [
-        {
+      {
           name: '首页',
           path: '/shouye',
         },
-          {
+            {
           name: '预警',
-          path: '/getWarning',
+          // path: '/getWarning',
+          path:'/getWarningfourg'
         },
         {
           name: '发现',
           path: '/gitDiscoverca',
         },
-      
-        {
-          name: '统计',
-          path: '/Statisticsht',
-        },
+    
+        // {
+        //   name: '统计',
+        //   path: '/Statisticsht',
+        // },
+        // {
+        //   name: '系统管理',
+        //   path: '/findUser',
+        // },
+        // {
+        //   name: '处置',
+        //   path: '',
+        // },
 
-        {
-          name: '处置',
-          path: '',
-        },
-
-        {
-          name: '验证',
-          path: '',
-        },
+        // {
+        //   name: '验证',
+        //   path: '',
+        // },
       ],
       namenav: '',
       navnumlist: [],

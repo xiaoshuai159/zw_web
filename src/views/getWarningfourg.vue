@@ -477,7 +477,7 @@ export default {
           // { value: '冒充公检法', label: '冒充公检法' },
           { value: '冒充公检法', label: '冒充公检法' },
           { value: '刷单', label: '刷单' },
-          { value: '游戏交易', label: '游戏交易' },
+          { value: '虚假购物', label: '虚假购物' },
                { value: '其他类型诈骗', label: '其他类型诈骗' },
         ],
       },
@@ -572,7 +572,7 @@ export default {
             }
             reader.readAsText(blob)
           } else {
-            let title = dayjs().format('YYYYMMDD') + '-长安预警导出.xlsx'
+            let title = dayjs().format('YYYYMMDD') + '-预警导出.xlsx'
 
             let binaryData = []
             binaryData.push(blob)

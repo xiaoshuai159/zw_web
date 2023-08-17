@@ -1,7 +1,9 @@
 import axios from 'axios'
 import https from 'https'
 import router from '@/router' // 引入路由对象实例
+const baseUrl = '/platform'
 const instance = axios.create({
+  baseURL:baseUrl,
   headers: { 'Content-Type': 'application/json' },
   //忽略证书
   httpsAgent: new https.Agent({  

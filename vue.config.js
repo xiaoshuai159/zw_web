@@ -11,12 +11,12 @@ module.exports = {
   publicPath: './',
   devServer: {
     proxy: {
-      '': {
+      '/platform': {
         // target:'http://10.8.0.249:8010',
         //  target:'http://10.8.0.12:3002',
         // target: 'http://10.8.0.120:8010',
         // target:'http://10.8.0.101:8080',
-        target:'http://10.8.0.249:8082',   //ces
+        // target:'http://10.8.0.249:8082',   //ces
         // target:'http://10.8.0.101:8080/',   // zx
         // target: 'http://10.8.0.101:8080',
         // target:'http://172.19.19.50:8082',
@@ -32,11 +32,13 @@ module.exports = {
         // target:'https://10.8.0.105:8443', 
         // target:'http://10.8.0.5:8080',   //zx   admin   123446
         // target: 'http://10.8.0.5:8080',
+        target: 'http://192.168.20.41:8802',
         ws: true,
         changeOrigin: true,
         secure: false, // 如果是https接口，需要配置这个参数
         // secure: true, // 如果是https接口，需要配置这个参数  https:false
-        pathRewrite: { '^': '' }
+        pathRewrite: { '^': '' },
+        // pathRewrite: {'^/platform':''}
       }
     },
 

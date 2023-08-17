@@ -5,7 +5,7 @@
       <div class="top1">
         <div class="top1_title">
           <!-- 头部_一级标头 -->
-          <div class="title">银川市境外网址处置平台</div>
+          <div class="title">中卫市境外涉诈网址发现预警平台</div>
         </div>
         <!-- 头部_光条-->
         <div class="top1_line">
@@ -148,10 +148,11 @@ export default {
 .title {
   position: absolute;
   left: 38%;
-  top: 5%;
+  // top: 5%;
+  top: 15%;
   font-family: 'heiti';
-  font-size: 38px;
-  letter-spacing: 5px /* 12/16 */;
+  font-size: 31px;
+  // letter-spacing: 5px /* 12/16 */;
   background-image: linear-gradient(0deg, #f8f8fb 0%, #8ec4fd 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
