@@ -247,9 +247,9 @@ router.beforeEach((to, from, next) => {
   if (to.path === '/home') return next()
   const user = window.sessionStorage.getItem('isLogin')
   if (user == 'true') return next()
-alert('请登录')
-next("/home")
-})
+    alert('请登录')
+    next("/home")
+  })
 
 
 

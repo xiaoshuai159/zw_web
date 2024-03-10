@@ -87,7 +87,7 @@ export default {
         // },
         {
           name: '系统管理',
-          path: '/findUser',
+          path: '/findRole',
         },
         // {
         //   name: '处置',
